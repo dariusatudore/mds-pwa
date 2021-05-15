@@ -6,7 +6,7 @@ const ProfileSchema = new mongoose.Schema({
     ref: "user",
   },
   images: {
-    type: mongoose.Schmea.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "image",
   },
   location: {
