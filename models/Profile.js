@@ -16,6 +16,11 @@ const ProfileSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  preference: {
+    type: String,
+    enum: ["male", "female", "both"],
+    default: "both",
+  },
   interests: {
     type: [String],
   },

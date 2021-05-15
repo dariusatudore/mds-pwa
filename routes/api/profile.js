@@ -48,6 +48,7 @@ router.post("/", [
     if (interests) profileFields.interests = interests;
     if (bio) profileFields.bio = bio;
     if (instagram) profileFields.instagram = instagram;
+    if (preferences) profileFields.preferences = preferences;
     // if(images) {
     //     profileFields.images = images.split(',').map(image => image.trim());
     // }
@@ -108,6 +109,23 @@ router.get("/user/:user_id", async (req, res) => {
     if (err.kind == "ObjectId") {
       return res.status(400).json({ msg: "Profile not found" });
     }
+    res.status(500).send("Server Error");
+  }
+});
+
+// @route   DELETE api/profile/user/:user_id
+// @desc    Deltete profile & user
+// @access  Private
+router.delete("/", auth, async (req, res) => {
+  try {
+    // remove profile
+    await Profile.findOneAndRemove({ user: req.user.id });
+    // remove user
+    await User.findOneAndRemove({ _id: req.user.id });
+
+    res.json({ msg: "User removed" });
+  } catch (err) {
+    console.error(err.message);
     res.status(500).send("Server Error");
   }
 });
