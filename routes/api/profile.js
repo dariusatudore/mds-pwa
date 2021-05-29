@@ -38,7 +38,8 @@ router.post("/", [
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { images, location, gender, interests, bio, instagram } = req.body;
+    const { images, location, gender, interests, bio, instagram, preference } =
+      req.body;
 
     // build profile object
     const profileFields = {};
@@ -48,7 +49,7 @@ router.post("/", [
     if (interests) profileFields.interests = interests;
     if (bio) profileFields.bio = bio;
     if (instagram) profileFields.instagram = instagram;
-    if (preferences) profileFields.preferences = preferences;
+    if (preference) profileFields.preference = preference;
     // if(images) {
     //     profileFields.images = images.split(',').map(image => image.trim());
     // }
