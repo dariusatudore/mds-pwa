@@ -12,17 +12,21 @@ import Cards from "./Cards";
 import ChatList from "./ChatList";
 import ChatScreen from "./ChatScreen";
 import Register from "./Register";
-import Login from "./Login";
+import Login, { Logout } from "./Login";
 import useLoginToken from "./useLoginToken";
+import Profile from "./Profile";
 
 function App() {
-  const { token, setToken } = useLoginToken();
+  const { token, setToken, removeToken } = useLoginToken();
 
   if (!token) {
     // if user is not login, redirect to login page
     return (
       <Router>
         <Route exact path="/">
+          <Redirect to="/login" />
+        </Route>
+        <Route path="/logout">
           <Redirect to="/login" />
         </Route>
         <Route path="/login">
@@ -47,6 +51,12 @@ function App() {
           </Route>
           <Route path="/swipe">
             <Cards />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/logout">
+            <Logout removeToken={removeToken} />
           </Route>
           <Route exact path="/login">
             <Redirect to="/" />

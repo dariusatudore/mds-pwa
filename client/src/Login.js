@@ -13,6 +13,7 @@ import FireIcon from "@material-ui/icons/Whatshot";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { Redirect } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -129,6 +130,11 @@ export default function Login({ setToken }) {
       </div>
     </Container>
   );
+}
+
+export function Logout({ removeToken }) {
+  removeToken();
+  <Redirect to="/" />;
 }
 
 Login.propTypes = {

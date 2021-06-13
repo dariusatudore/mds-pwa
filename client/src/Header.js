@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ChatIcon from "@material-ui/icons/Chat";
 import ProfileIcon from "@material-ui/icons/Person";
 import FireIcon from "@material-ui/icons/Whatshot";
+import LogoutIcon from "@material-ui/icons/ExitToApp";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import "./Header.css";
@@ -14,7 +15,7 @@ const useStyles = makeStyles({
   },
   icon: {
     "&$selected": {
-      color: "#ff1236",
+      color: "#faff69",
     },
   },
   selected: {},
@@ -59,6 +60,13 @@ function Header() {
           className={classes.icon}
           label="Profile"
           icon={<ProfileIcon />}
+        />
+        <BottomNavigationAction
+          value="logout"
+          classes={{ selected: classes.selected }}
+          className={classes.icon}
+          label="Logout"
+          icon={<LogoutIcon />}
         />
       </BottomNavigation>
     </div>
