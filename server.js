@@ -1,11 +1,19 @@
 const express = require("express");
+const cors = require("cors");
 const { ArgumentOutOfRangeError } = require("rxjs");
 const connectDB = require("./config/db");
-
 const app = express();
 
 // Connect DATABASE
 connectDB();
+
+const allowedOrigins = ["http://localhost:3000"];
+
+const options = {
+  origin: allowedOrigins,
+};
+
+app.use(cors(options));
 
 // Init Middlewave
 app.use(express.json({ extended: false }));
