@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+import React from 'react';
+import Header from './Header';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import './App.css';
+import logo from './logo.svg';
+import Cards from './Cards';
+import ChatList from './ChatList';
+import ChatScreen from './ChatScreen';
+import useLoginToken from './useLoginToken'
 
 function App() {
+  
+  const { token, setToken } = useLoginToken();
+
+  if(!token) { // if user is not login, redirect to login page
+    return <Login setToken={setToken} />
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+        <Switch>
+          <Route path='/chats/:person'>
+            <ChatScreen />
+          </Route>
+          <Route path='/chats'>
+            <ChatList />
+          </Route>
+          <Route path='/swipe'>
+            <Cards />
+          </Route>
+        </Switch>
+        <Header />
+      </Router>
+
     </div>
   );
 }
