@@ -6,7 +6,7 @@ import FireIcon from "@material-ui/icons/Whatshot";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import "./Header.css";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
