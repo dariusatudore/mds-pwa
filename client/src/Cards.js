@@ -103,6 +103,8 @@ function Cards() {
               style={{
                 position: "absolute",
                 bottom: "0",
+                left: "0",
+                marginLeft: "30px",
                 marginBottom: "25px",
                 color: "white",
               }}
