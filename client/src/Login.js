@@ -47,6 +47,12 @@ async function loginUser(credentials) {
 }
 
 export default function Login({ setToken }) {
+  const [rememberMe, setRememberMe] = useState(false);
+
+  function handleRememberMe(e) {
+    setRememberMe(e.target.checked);
+  }
+
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
@@ -59,7 +65,8 @@ export default function Login({ setToken }) {
     });
 
     console.log(token);
-    setToken(token);
+    console.log(rememberMe);
+    setToken(token, rememberMe);
   };
 
   const classes = useStyles();
@@ -102,7 +109,13 @@ export default function Login({ setToken }) {
             onChange={(e) => setPassword(e.target.value)}
           />
           <FormControlLabel
-            control={<Checkbox value="remember" color="secondary" />}
+            control={
+              <Checkbox
+                onChange={handleRememberMe}
+                checked={rememberMe}
+                color="secondary"
+              />
+            }
             label="Remember me"
           />
           <Button
