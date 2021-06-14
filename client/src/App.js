@@ -53,7 +53,7 @@ function App() {
             <Cards />
           </Route>
           <Route path="/profile">
-            <Profile />
+            <Profile token={token} />
           </Route>
           <Route path="/logout">
             <Logout removeToken={removeToken} />

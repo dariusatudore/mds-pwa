@@ -5,6 +5,8 @@ import CloseIcon from "@material-ui/icons/Close";
 import StarIcon from "@material-ui/icons/Star";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import IconButton from "@material-ui/core/IconButton";
+import LocationIcon from "@material-ui/icons/LocationOnOutlined";
+import { Typography } from "@material-ui/core";
 
 const db = [
   {
@@ -96,7 +98,27 @@ function Cards() {
             style={{ backgroundImage: `url(${person.url})` }}
             className="card"
           >
-            <h2>{person.name}</h2>
+            <h2 style={{ marginBottom: "50px" }}>{person.name}</h2>
+            <LocationIcon
+              style={{
+                position: "absolute",
+                bottom: "0",
+                marginBottom: "25px",
+                color: "white",
+              }}
+            />
+            <Typography
+              style={{
+                fontSize: "17px",
+                position: "absolute",
+                bottom: "0",
+                marginBottom: "25px",
+                marginLeft: "30px",
+                color: "white",
+              }}
+            >
+              70 km away
+            </Typography>
           </div>
         </TinderCards>
       ))}
