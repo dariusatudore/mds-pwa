@@ -10,7 +10,14 @@ const ProfileSchema = new mongoose.Schema({
     ref: "image",
   },
   location: {
-    type: String,
+    coordinates: {
+      type: [Number],
+      required: true,
+    },
+  },
+  age: {
+    type: Number,
+    required: true,
   },
   gender: {
     type: String,
@@ -18,7 +25,7 @@ const ProfileSchema = new mongoose.Schema({
   },
   preference: {
     type: String,
-    enum: ["male", "female", "both"],
+    enum: ["Male", "Female", "Both"],
     default: "both",
   },
   interests: {

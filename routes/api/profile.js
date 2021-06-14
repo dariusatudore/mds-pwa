@@ -32,19 +32,29 @@ router.get("/me", auth, async (req, res) => {
 router.post("/", [
   auth,
   [check("gender", "Gender is required").not().isEmpty()],
+  [check("age", "Age is required").not().isEmpty()],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { images, location, gender, interests, bio, instagram, preference } =
-      req.body;
+    const {
+      images,
+      location,
+      age,
+      gender,
+      interests,
+      bio,
+      instagram,
+      preference,
+    } = req.body;
 
     // build profile object
     const profileFields = {};
     profileFields.user = req.user.id;
     if (location) profileFields.location = location;
+    if (age) profileFields.age = age;
     if (gender) profileFields.gender = gender;
     if (interests) profileFields.interests = interests;
     if (bio) profileFields.bio = bio;
@@ -53,7 +63,7 @@ router.post("/", [
     // if(images) {
     //     profileFields.images = images.split(',').map(image => image.trim());
     // }
-    if (images) profileFields.images = images;
+    // if (images) profileFields.images = images;
 
     try {
       let profile = await Profile.findOne({ user: req.user.id });
