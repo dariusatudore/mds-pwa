@@ -53,9 +53,3 @@
 ### [ESLint Standards](https://github.com/dariusatudore/mds-pwa/commit/efdb6d7ee00b2ed204b629d2a4a3a30a0955b833)
 
 ### [Big Boy Merge](https://github.com/dariusatudore/mds-pwa/commit/3845b1ce04d0f837d1ee5db34f4b6b24c9060b59)
-
-#
-
-## Design Patterns
-
-### REST architectural style
