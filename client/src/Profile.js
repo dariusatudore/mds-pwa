@@ -43,6 +43,8 @@ export default function Profile(props) {
 
   const [requestFailed, setRequestFailed] = useState(false);
 
+  const [profile, setProfile] = useState([]);
+
   const classes = useStyles();
 
   async function getMyProfile(token) {
@@ -56,6 +58,9 @@ export default function Profile(props) {
       .then((res) => {
         if (!res.ok) throw new Error(res.status);
         else return res.json();
+      })
+      .then(function (json) {
+        setProfile(json);
       })
       .catch((error) => {
         console.log("Error: " + error);
@@ -111,8 +116,6 @@ export default function Profile(props) {
     });
   };
 
-  let profile = getMyProfile(props.token);
-
   const getLocation = () => {
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log("Latitude is :", position.coords.latitude);
@@ -120,6 +123,8 @@ export default function Profile(props) {
       setLocation([position.coords.latitude, position.coords.longitude]);
     });
   };
+
+  getMyProfile(props.token);
 
   if (requestFailed == true) {
     return (
@@ -251,10 +256,51 @@ export default function Profile(props) {
   } else {
     return (
       <Container component="main" maxWidth="xs">
-        <Avatar
-          style={{ height: "80px", width: "80px" }}
-          src="https://playtech.ro/stiri/wp-content/uploads/2020/08/Ce-a-f%C4%83cut-Dorian-Popa-%C3%AEn-ziua-%C3%AEn-care-a-%C3%AEmplinit-32-de-ani.-Ce-surpriz%C4%83-pentru-artist.jpg"
-        />
+        <Typography
+          component="h2"
+          style={{
+            fontSize: "17px",
+            marginTop: "10px",
+          }}
+        >
+          Age: {profile.age}
+        </Typography>
+        <Typography
+          component="h2"
+          style={{
+            fontSize: "17px",
+            marginTop: "10px",
+          }}
+        >
+          Bio: {profile.bio}
+        </Typography>
+        <Typography
+          component="h2"
+          style={{
+            fontSize: "17px",
+            marginTop: "10px",
+          }}
+        >
+          Gender: {profile.gender}
+        </Typography>
+        <Typography
+          component="h2"
+          style={{
+            fontSize: "17px",
+            marginTop: "10px",
+          }}
+        >
+          Interests: {profile.interests}
+        </Typography>
+        <Typography
+          component="h2"
+          style={{
+            fontSize: "17px",
+            marginTop: "10px",
+          }}
+        >
+          Preference: {profile.preference}
+        </Typography>
       </Container>
     );
   }
