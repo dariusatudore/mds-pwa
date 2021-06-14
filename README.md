@@ -14,6 +14,8 @@
 
 ### The user stories can be found on our team's [Jira](https://mdsmdsmds.atlassian.net/jira/software/projects/MP/boards/1/backlog).
 
+![app backlog](https://github.com/dariusatudore/mds-pwa/blob/main/UML/backlog.png)
+
 #
 
 ## UML
