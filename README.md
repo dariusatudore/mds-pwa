@@ -1,72 +1,53 @@
-# Getting Started with Create React App
+# Proiect MDS - TBD
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Welcome to one of the best dating apps to date.
 
+### The app was developed using the MERN stack.
 
-### Run `npm install` to install package dependencies.
-## Available Scripts
+#### With the help of everybody's favourite language: JavaScript.
 
-In the project directory, you can run:
+#
 
-### `npm start`
+#
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## User Stories
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### The user stories can be found on our team's [Jira](https://mdsmdsmds.atlassian.net/jira/software/projects/MP/boards/1/backlog).
 
-### `npm test`
+#
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## UML
 
-### `npm run build`
+### The UML Diagram can be found [here](https://github.com/dariusatudore/mds-pwa/blob/main/UML/UML.pdf).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Source Control
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### For source control we used Git version control, and we pushed the commits in this repository. We also used several branches for better management of our code.
 
-### `npm run eject`
+#
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Bug Reporting
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### During our development process we encountered several bugs. Most of them have been solved without raising an issue.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### The list of documented bugs that are closed can be found [here](https://github.com/dariusatudore/mds-pwa/issues?q=is%3Aissue+is%3Aclosed).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#
 
-## Learn More
+## Build Tool
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Being that the backend and frontend of our app has been developed in JavaScript with Node.js we have used the npm to run both of our servers.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### We also used nodemon to aplly changes to the servers on save.
 
-### Code Splitting
+#
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Refactoring / Code Standards
 
-### Analyzing the Bundle Size
+### We did on major refactorin to our code following the merge of the backend with the frontend so that our app would follow ESLint Standards.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### [ESLint Standards](https://github.com/dariusatudore/mds-pwa/commit/efdb6d7ee00b2ed204b629d2a4a3a30a0955b833)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### [Big Boy Merge](https://github.com/dariusatudore/mds-pwa/commit/3845b1ce04d0f837d1ee5db34f4b6b24c9060b59)
