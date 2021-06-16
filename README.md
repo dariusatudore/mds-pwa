@@ -6,7 +6,7 @@
 
 #### With the help of everybody's favourite language: JavaScript.
 
-#
+## [App Demo](https://youtu.be/6AEzMtyCn8E)
 
 #
 
@@ -48,7 +48,7 @@
 
 ## Refactoring / Code Standards
 
-### We did on major refactorin to our code following the merge of the backend with the frontend so that our app would follow ESLint Standards.
+### We did major refactoring to our code following the merge of the backend with the frontend so that our app would follow ESLint Standards.
 
 ### [ESLint Standards](https://github.com/dariusatudore/mds-pwa/commit/efdb6d7ee00b2ed204b629d2a4a3a30a0955b833)
 
